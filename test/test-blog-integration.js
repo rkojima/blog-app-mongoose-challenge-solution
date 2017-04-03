@@ -144,8 +144,8 @@ describe('Blog API resource', function() {
             .then(function(post) {
                 console.log(newBlogPost.author);
                 console.log(post.author);
-                //post.author.should.equal(newBlogPost.author);
-                // this one doesn't work for some reason, even though newBlogPost.author
+                // post.author.should.deep.equal(newBlogPost.author);
+                // This one doesn't work for some reason, even though newBlogPost.author
                 // and post.author are essentially the same
                 post.author.firstName.should.equal(newBlogPost.author.firstName);
                 post.author.lastName.should.equal(newBlogPost.author.lastName);
@@ -167,6 +167,7 @@ describe('Blog API resource', function() {
                 .exec() 
                 // Why can't you just use findOne()? 
                 // Why do we use an .exec function without any parameters?
+                // .exec() makes sure you get a promise, comes with .catch, etc.
                 .then(function(post) {
                     updatedPost.id = post.id;
                     return chai.request(app)
