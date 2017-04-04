@@ -11,6 +11,7 @@
     "body-parser": "^1.15.2",
     "chai-http": "^3.0.0",
     "express": "^4.12.4",
+    "faker": "^4.1.0",
     "mongoose": "^4.9.3",
     "morgan": "^1.7.0",
     "uuid": "^2.0.3"
